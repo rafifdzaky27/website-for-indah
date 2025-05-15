@@ -85,7 +85,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-smile"></i>
                                 <p>Your beautiful smile</p>
                             </div>
                             <div class="love-item-back">
@@ -96,7 +95,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-hand-holding-heart"></i>
                                 <p>Your kindness to everyone</p>
                             </div>
                             <div class="love-item-back">
@@ -107,7 +105,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-laugh"></i>
                                 <p>The way you laugh</p>
                             </div>
                             <div class="love-item-back">
@@ -118,7 +115,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-hands-helping"></i>
                                 <p>How you always support me</p>
                             </div>
                             <div class="love-item-back">
@@ -129,7 +125,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-brain"></i>
                                 <p>Your intelligence</p>
                             </div>
                             <div class="love-item-back">
@@ -140,7 +135,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-shield-alt"></i>
                                 <p>How you make me feel safe</p>
                             </div>
                             <div class="love-item-back">
@@ -151,7 +145,6 @@
                     <div class="love-item">
                         <div class="love-item-inner">
                             <div class="love-item-front">
-                                <i class="fas fa-fire"></i>
                                 <p>Your passion for life</p>
                             </div>
                             <div class="love-item-back">
@@ -245,51 +238,64 @@
             </div>
         </section>
 
-        <!-- Section 4: Love Question -->
+        <!-- Section 4: Love Rating -->
         <section id="section4" class="section">
-            <div class="content">
-                <h2>Do you love me?</h2>
-                <div class="love-question-container">
-                    <div class="floating-hearts-container">
-                        <!-- Floating hearts will be added by JavaScript -->
+            <div class="content love-rating-content">
+                <h2 class="love-title">How Much Do You Love Me?</h2>
+                <p class="love-subtitle">On a scale from 1 to ∞, of course!</p>
+                
+                <div class="love-meter-container">
+                    <div class="love-meter-wrapper">
+                        <div class="love-meter">
+                            <div class="love-meter-fill"></div>
+                        </div>
+                        <div class="love-meter-marker"></div>
                     </div>
-                    <div class="love-options">
-                        <div class="love-option" data-response="Yes" onclick="selectLoveOption(this, 'Yes')" style="cursor:pointer;">
-                            <div class="love-option-inner">
-                                <div class="love-icon">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <span>Yes</span>
-                            </div>
-                        </div>
-                        <div class="love-option" data-response="Yessss" onclick="selectLoveOption(this, 'Yessss')" style="cursor:pointer;">
-                            <div class="love-option-inner">
-                                <div class="love-icon">
-                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i>
-                                </div>
-                                <span>Yesss</span>
-                            </div>
-                        </div>
-                        <div class="love-option" data-response="Very much" onclick="selectLoveOption(this, 'Very much')" style="cursor:pointer;">
-                            <div class="love-option-inner">
-                                <div class="love-icon">
-                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
-                                </div>
-                                <span>I love you so much</span>
-                            </div>
-                        </div>
-                        <div class="love-option" data-response="Super duper love you" onclick="selectLoveOption(this, 'Super duper love you')" style="cursor:pointer;">
-                            <div class="love-option-inner">
-                                <div class="love-icon">
-                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
-                                </div>
-                                <span>I love you Infinitely ❤️</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="love-response" class="love-response"></div>
-                    <button id="next-btn-4" class="next-btn hidden">Continue ❤️</button>
                 </div>
+                
+                <div class="love-options-container">
+                    <div class="love-option" data-response="Just a perfect 10!" onclick="selectLoveOption(this, 'Just a perfect 10!')">
+                        <div class="love-option-inner">
+                            <div class="love-icon">
+                                <span class="love-number">10</span>
+                            </div>
+                            <span class="love-label">Perfect 10</span>
+                        </div>
+                    </div>
+                    
+                    <div class="love-option" data-response="I love you 3000!" onclick="selectLoveOption(this, 'I love you 3000!')">
+                        <div class="love-option-inner">
+                            <div class="love-icon">
+                                <span class="love-number">3000</span>
+                            </div>
+                            <span class="love-label">I love you 3000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="love-option" data-response="To infinity!" onclick="selectLoveOption(this, 'To infinity!')">
+                        <div class="love-option-inner">
+                            <div class="love-icon">
+                                <span class="love-number">∞</span>
+                            </div>
+                            <span class="love-label">Infinity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="love-option" data-response="To infinity and beyond!" onclick="selectLoveOption(this, 'To infinity and beyond!')">
+                        <div class="love-option-inner">
+                            <div class="love-icon">
+                                <span class="love-number">∞<sup>∞</sup></span>
+                            </div>
+                            <span class="love-label">Infinity<sup>∞</sup></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="love-response" class="love-response"></div>
+                <div class="love-animation-container">
+                    <div class="explosion-container"></div>
+                </div>
+                <button id="next-btn-4" class="next-btn hidden">Continue ❤️</button>
             </div>
         </section>
 

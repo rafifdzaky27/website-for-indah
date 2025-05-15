@@ -173,7 +173,7 @@ function setupLandingPage() {
             const textToType = [
                 "My dearest Indah,",
                 "I still can't believe I get to call you mine.",
-                "You're the kindest, most beautiful person I've ever known.",
+                "Thank you for being my best friend, my love, my everything.",
                 "I made this for you, as a small piece of how much I love you.",
             ];
             
@@ -977,6 +977,26 @@ function typeTextSimple(element, text, index) {
     }
 }
 
+// Add click effect to love items
+function setupLoveItemsInteraction() {
+    const loveItems = document.querySelectorAll('.love-item');
+    loveItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const innerItem = item.querySelector('.love-item-inner');
+            if (innerItem) {
+                innerItem.classList.toggle('flipped');
+            }
+        });
+    });
+}
+
+// Setup letter section function
+function setupLetterSection() {
+    // Letter section navigation is already handled in setupNavigation
+    // This function is just a placeholder to ensure the function exists
+    console.log('Letter section setup complete');
+}
+
 // Function for inline love option click handler
 function selectLoveOption(element, response) {
     // Remove selected class from all options
@@ -986,22 +1006,97 @@ function selectLoveOption(element, response) {
     // Add selected class to clicked option
     element.classList.add('selected');
     
+    // Get the love meter elements
+    const loveMeterFill = document.querySelector('.love-meter-fill');
+    const loveMeterMarker = document.querySelector('.love-meter-marker');
+    
+    // Set the fill percentage based on which option was selected
+    let fillPercentage = 0;
+    if (response.includes('10')) {
+        fillPercentage = 25;
+    } else if (response.includes('3000')) {
+        fillPercentage = 50;
+    } else if (response.includes('infinity') && !response.includes('beyond')) {
+        fillPercentage = 75;
+    } else if (response.includes('beyond') || response.includes('∞<sup>∞</sup>')) {
+        fillPercentage = 100;
+    }
+    
+    // Animate the love meter
+    loveMeterFill.style.width = `${fillPercentage}%`;
+    setTimeout(() => {
+        loveMeterMarker.classList.add('active');
+    }, 500);
+    
+    // Create heart explosion animation
+    createHeartExplosion(element, fillPercentage);
+    
     // Show the response
     const loveResponse = document.getElementById('love-response');
     const nextBtn = document.getElementById('next-btn-4');
     
     // Clear previous response
-    loveResponse.textContent = '';
+    loveResponse.textContent = response;
+    loveResponse.classList.remove('active');
     
-    // Show new response with typing effect
-    typeTextSimple(loveResponse, response, 0);
+    // Animate the response
+    setTimeout(() => {
+        loveResponse.classList.add('active');
+    }, 300);
     
-    // Show next button
-    nextBtn.classList.remove('hidden');
+    // Show the next button
+    setTimeout(() => {
+        nextBtn.classList.remove('hidden');
+    }, 1500);
     
     // Create more floating hearts on click
     const floatingHeartsContainer = document.querySelector('.floating-hearts-container');
     createFloatingHeartsBackground(floatingHeartsContainer, 5);
+}
+
+// Create heart explosion animation
+function createHeartExplosion(element, intensity) {
+    const explosionContainer = document.querySelector('.explosion-container');
+    const rect = element.getBoundingClientRect();
+    const containerRect = explosionContainer.getBoundingClientRect();
+    
+    // Calculate the center point relative to the explosion container
+    const centerX = rect.left + rect.width / 2 - containerRect.left;
+    const centerY = rect.top + rect.height / 2 - containerRect.top;
+    
+    // Clear previous hearts
+    explosionContainer.innerHTML = '';
+    
+    // Number of hearts based on intensity
+    const heartCount = Math.floor(intensity / 10) + 10;
+    
+    // Create hearts
+    for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'explosion-heart';
+        heart.innerHTML = '❤️';
+        
+        // Random position around the center
+        heart.style.left = `${centerX}px`;
+        heart.style.top = `${centerY}px`;
+        
+        // Random direction for animation
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 150;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        const rotation = -180 + Math.random() * 360;
+        
+        // Set CSS variables for the animation
+        heart.style.setProperty('--tx', `${tx}px`);
+        heart.style.setProperty('--ty', `${ty}px`);
+        heart.style.setProperty('--r', `${rotation}deg`);
+        
+        // Random delay
+        heart.style.animationDelay = `${Math.random() * 0.5}s`;
+        
+        explosionContainer.appendChild(heart);
+    }
 }
 
 // Function for inline growing heart click handler
