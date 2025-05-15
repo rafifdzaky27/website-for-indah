@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Section navigation setup
     setupNavigation();
     
-    // Add click effect to love items
-    setupLoveItemsInteraction();
+    // Love items section has been removed
 
     // Love question buttons
     setupLoveQuestions();
@@ -193,15 +192,9 @@ function setupNavigation() {
         animateTimelineItems();
     });
     
-    // Our Story to Things I Love About You
+    // Our Story to Gallery (removed Things I Love About You section)
     document.getElementById('next-btn-story').addEventListener('click', function() {
-        changeSection('our-story', 'section2');
-        animateLoveItems();
-    });
-    
-    // Things I Love About You to Gallery
-    document.getElementById('next-btn-2').addEventListener('click', function() {
-        changeSection('section2', 'section3');
+        changeSection('our-story', 'section3');
         loadGallery();
     });
     
@@ -977,18 +970,7 @@ function typeTextSimple(element, text, index) {
     }
 }
 
-// Add click effect to love items
-function setupLoveItemsInteraction() {
-    const loveItems = document.querySelectorAll('.love-item');
-    loveItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const innerItem = item.querySelector('.love-item-inner');
-            if (innerItem) {
-                innerItem.classList.toggle('flipped');
-            }
-        });
-    });
-}
+// Love items section has been removed
 
 // Setup letter section function
 function setupLetterSection() {
