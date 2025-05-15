@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Indah</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Music Control -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <audio id="background-music" loop>
+            <source src="assets/audio/Bruno Major - Nothing (Lyric & Chord Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Landing Page Animation -->
+    <div id="landing-animation" class="landing-animation active">
+        <div class="dreamy-background"></div>
+        <div class="landing-content">
+            <h1 class="landing-title">For Indah</h1>
+            <p class="landing-subtitle">A special gift for you</p>
+            <button id="enter-site" class="enter-btn">Enter ❤️</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Typing Animation -->
+        <section id="section1" class="section">
+            <div class="content">
+                <div id="typing-text" class="typing-text"></div>
+                <button id="next-btn-1" class="next-btn">Continue ❤️</button>
+            </div>
+        </section>
+        
+        <!-- Section: Our Story -->
+        <section id="our-story" class="section">
+            <div class="content">
+                <h2>Our Story</h2>
+                <div class="story-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>When I first really get to know you.</h3>
+                            <p>Your presence, your thoughts, the way you made ordinary days feel less heavy with your stories. I knew I had to be with you.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>When I Started Falling</h3>
+                            <p>It wasn't one big moment, but all the little things you did that made my heart yours.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>That Unforgettable Day</h3>
+                            <p>I built up a courage to ask you out. And I'm glad that I did. It was the greatest decision of my life.</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="next-btn-story" class="next-btn">Continue ❤️</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Things I Love About You -->
+        <section id="section2" class="section">
+            <div class="content">
+                <h2>Things I Love About You</h2>
+                <div class="love-grid">
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-smile"></i>
+                                <p>Your beautiful smile</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">The way it lights up any room and makes my heart skip a beat every single time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <p>Your kindness to everyone</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">How you always go out of your way to help others, even when no one is watching.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-laugh"></i>
+                                <p>The way you laugh</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">It's the most beautiful sound in the world to me, and I love being the reason for it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-hands-helping"></i>
+                                <p>How you always support me</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">You believe in me even when I don't believe in myself, and that means everything.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-brain"></i>
+                                <p>Your intelligence</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">The way your mind works fascinates me, and I love our deep conversations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>How you make me feel safe</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">With you, I can be completely myself without any fear or judgment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <i class="fas fa-fire"></i>
+                                <p>Your passion for life</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">The way you approach everything with enthusiasm and joy is infectious.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <p>Your beautiful eyes</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">I could get lost in them forever. They show all the love and kindness inside you.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <p>How you care for others</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">Your empathy and compassion make you the most beautiful soul I've ever known.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <p>Your patience with me</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">Even when I'm difficult, you never give up on me. Your patience is endless.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <p>The way you see the world</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">You find beauty in the smallest things and help me see life in a whole new way.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="love-item">
+                        <div class="love-item-inner">
+                            <div class="love-item-front">
+                                <p>Your strength</p>
+                            </div>
+                            <div class="love-item-back">
+                                <p class="detail-text">The way you handle challenges with grace and never give up inspires me every day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="next-btn-2" class="next-btn">Next Page ❤️</button>
+            </div>
+        </section>
+
+        <!-- Section 3: Photobooth Gallery -->
+        <section id="section3" class="section">
+            <div class="content photobooth-content">
+                <h2>Our Photobooth Memories</h2>
+                <div class="photobooth-container">
+                    <div class="photobooth-frame">
+                        <div class="photobooth-header">
+                            <div class="photobooth-logo">PHOTO<span>BOOTH</span></div>
+                            <div class="photobooth-date">May 2025</div>
+                        </div>
+                        <div class="photobooth-screen">
+                            <!-- Single video player approach -->
+                            <div id="video-player-container">
+                                <video id="main-video-player" loop muted>
+                                    <source src="assets/videos/photobooth1.mp4" type="video/mp4">
+                                </video>
+                                <div id="video-caption" class="video-caption">Our First Date</div>
+                            </div>
+                        </div>
+                        <div class="photobooth-controls">
+                            <button id="prev-video" class="control-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button id="play-video" class="control-btn"><i class="fas fa-play"></i></button>
+                            <button id="next-video" class="control-btn"><i class="fas fa-chevron-right"></i></button>
+                            <button id="next-btn-3" class="control-btn continue-btn hidden"><i class="fas fa-heart"></i> Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="instructions">Swipe through our memories ❤️</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Love Question -->
+        <section id="section4" class="section">
+            <div class="content">
+                <h2>Do you love me?</h2>
+                <div class="love-question-container">
+                    <div class="floating-hearts-container">
+                        <!-- Floating hearts will be added by JavaScript -->
+                    </div>
+                    <div class="love-options">
+                        <div class="love-option" data-response="Yes" onclick="selectLoveOption(this, 'Yes')" style="cursor:pointer;">
+                            <div class="love-option-inner">
+                                <div class="love-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <span>Yes</span>
+                            </div>
+                        </div>
+                        <div class="love-option" data-response="Yessss" onclick="selectLoveOption(this, 'Yessss')" style="cursor:pointer;">
+                            <div class="love-option-inner">
+                                <div class="love-icon">
+                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+                                </div>
+                                <span>Yesss</span>
+                            </div>
+                        </div>
+                        <div class="love-option" data-response="Very much" onclick="selectLoveOption(this, 'Very much')" style="cursor:pointer;">
+                            <div class="love-option-inner">
+                                <div class="love-icon">
+                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+                                </div>
+                                <span>I love you so much</span>
+                            </div>
+                        </div>
+                        <div class="love-option" data-response="Super duper love you" onclick="selectLoveOption(this, 'Super duper love you')" style="cursor:pointer;">
+                            <div class="love-option-inner">
+                                <div class="love-icon">
+                                    <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+                                </div>
+                                <span>I love you Infinitely ❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="love-response" class="love-response"></div>
+                    <button id="next-btn-4" class="next-btn hidden">Continue ❤️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Letter to the Past You Section -->
+        <section id="letter-section" class="section">
+            <div class="content">
+                <h2>A Letter to the Past You</h2>
+                <div class="letter-container">
+                    <div class="letter">
+                        <p class="letter-date">Dear Indah from the past,</p>
+                        <p>If I could tell you what the future holds, I'd say get ready for a beautiful journey. The girl I first fell for has grown into an even more amazing woman than I could have imagined.</p>
+                        <p>You'll face challenges, but your kindness will never fade. Your smile will brighten countless days, not just mine but everyone around you.</p>
+                        <p>I'm so proud of who you've become and grateful that through everything, you stayed true to yourself - the wonderful person I fell in love with.</p>
+                        <p>Thank you for being you, yesterday, today, and tomorrow.</p>
+                        <p class="letter-signature">With all my love,<br>Me</p>
+                    </div>
+                </div>
+                <button id="next-btn-letter" class="next-btn">Continue ❤️</button>
+            </div>
+        </section>
+
+        <!-- Our Journey Has Just Begun Section -->
+        <section id="journey-section" class="section">
+            <div class="content">
+                <h2>Our Journey Has Just Begun</h2>
+                <div class="journey-container">
+                    <div class="journey-animation">
+                        <div class="journey-scene">
+                            <!-- Sky background with clouds -->
+                            <div class="sky"></div>
+                            <div class="cloud cloud1"></div>
+                            <div class="cloud cloud2"></div>
+                            <div class="cloud cloud3"></div>
+                            
+                            <!-- Airplane with heart trail -->
+                            <div class="airplane">
+                                <div class="airplane-body"></div>
+                                <div class="airplane-wing"></div>
+                                <div class="airplane-tail"></div>
+                                <div class="airplane-window"></div>
+                            </div>
+                            
+                            <!-- Heart trail -->
+                            <div class="heart-trail">
+                                <i class="fas fa-heart heart1"></i>
+                                <i class="fas fa-heart heart2"></i>
+                                <i class="fas fa-heart heart3"></i>
+                                <i class="fas fa-heart heart4"></i>
+                                <i class="fas fa-heart heart5"></i>
+                            </div>
+                            
+                            <!-- Journey path with milestones -->
+                            <div class="journey-path">
+                                <div class="milestone start">
+                                    <div class="milestone-dot"></div>
+                                    <div class="milestone-label">Together</div>
+                                </div>
+                                <div class="milestone">
+                                    <div class="milestone-dot"></div>
+                                    <div class="milestone-label">Today</div>
+                                </div>
+                                <div class="milestone">
+                                    <div class="milestone-dot"></div>
+                                    <div class="milestone-label">Future</div>
+                                </div>
+                                <div class="milestone future">
+                                    <div class="milestone-dot"></div>
+                                    <div class="milestone-label">Forever</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="journey-message">
+                        <p>We're just at the beginning of our beautiful story...</p>
+                        <p>Every day with you is a new adventure, a new page in our book.</p>
+                        <p>I can't wait to see where our journey takes us next!</p>
+                        <p>The best is yet to come, my love. ❤️</p>
+                    </div>
+                </div>
+                <button id="next-btn-journey" class="next-btn">Continue ❤️</button>
+            </div>
+        </section>
+
+        <!-- Section 5: YouTube Video -->
+        <section id="section5" class="section">
+            <div class="content">
+                <h2>A Special Video For You</h2>
+                <div class="video-container">
+                    <!-- YouTube video will be embedded here -->
+                    <div id="youtube-player"></div>
+                </div>
+                <button id="next-btn-5" class="next-btn">Continue ❤️</button>
+            </div>
+        </section>
+
+        <!-- Growing Heart Section -->
+        <section id="growing-heart-section" class="section">
+            <div class="content">
+                <h2>Click the Heart</h2>
+                <div class="growing-heart-container">
+                    <div id="growing-heart" class="growing-heart" onclick="growHeart()" style="cursor:pointer;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="click-instruction">Click me repeatedly!</div>
+                    <div id="heart-size-counter" class="heart-size-counter">0 / 10</div>
+                    <div id="heart-message" class="heart-message"></div>
+                </div>
+                <div id="surprise-image-container" class="surprise-image-container hidden">
+                    <img id="surprise-image" src="assets/images/surprise.png" alt="Surprise image" class="surprise-image">
+                    <p class="surprise-caption">You've found our special memory! 💕</p>
+                </div>
+                <button id="next-btn-heart" class="next-btn hidden">Continue ❤️</button>
+            </div>
+        </section>
+
+        <!-- Section 6: Final Message -->
+        <section id="section6" class="section">
+            <div class="content">
+                <h2>Forever Yours</h2>
+                <div class="final-message">
+                    <p>Every day with you is a blessing.</p>
+                    <p>You make my world brighter and my heart fuller.</p>
+                    <p>I cherish every moment we spend together.</p>
+                    <p>Thank you for letting me be a part of your life.</p>
+                    <p>I will always, ALWAYS love you.</p>
+                    <div class="heart-animation">
+                        <div class="heart"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
