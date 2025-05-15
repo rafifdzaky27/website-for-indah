@@ -1,0 +1,292 @@
+/* Mobile-friendly styles for Indah's website */
+
+/* General responsive adjustments */
+@media (max-width: 768px) {
+    /* General adjustments */
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .content {
+        width: 95%;
+        padding: 25px 15px;
+    }
+    
+    /* Landing page */
+    .landing-title {
+        font-size: 3rem;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* Typing animation section */
+    .typing-text {
+        font-size: 1.5rem;
+        min-height: 200px;
+    }
+    
+    /* Story timeline */
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Photobooth gallery */
+    .photobooth-frame {
+        width: 100%;
+    }
+    
+    .photobooth-logo {
+        font-size: 1.2rem;
+    }
+    
+    /* Love rating section */
+    .love-title {
+        font-size: 2.2rem;
+    }
+    
+    .love-subtitle {
+        font-size: 1rem;
+    }
+    
+    .love-options-container {
+        gap: 15px;
+    }
+    
+    .love-option {
+        width: calc(50% - 15px);
+    }
+    
+    .love-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .love-number {
+        font-size: 2rem;
+    }
+    
+    .love-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Letter section */
+    .letter {
+        padding: 20px;
+    }
+    
+    .letter p {
+        font-size: 1rem;
+    }
+    
+    /* Journey section */
+    .journey-animation {
+        height: 200px;
+    }
+    
+    /* Growing heart section */
+    .growing-heart {
+        font-size: 3rem;
+    }
+    
+    /* Final message */
+    .final-message p {
+        font-size: 1.1rem;
+    }
+    
+    /* Buttons */
+    .next-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* iPhone specific adjustments */
+@media (max-width: 480px) {
+    /* General adjustments */
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .content {
+        padding: 20px 12px;
+        border-radius: 15px;
+    }
+    
+    /* Landing page */
+    .landing-title {
+        font-size: 2.5rem;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .enter-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    
+    /* Typing animation section */
+    .typing-text {
+        font-size: 1.3rem;
+        min-height: 180px;
+    }
+    
+    /* Love rating section */
+    .love-title {
+        font-size: 1.8rem;
+    }
+    
+    .love-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .love-options-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .love-option {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .love-option-inner {
+        min-height: 100px;
+        padding: 15px 10px;
+    }
+    
+    .love-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .love-number {
+        font-size: 1.8rem;
+    }
+    
+    .love-meter-container {
+        padding: 15px 0 30px;
+    }
+    
+    .love-meter-wrapper {
+        width: 95%;
+    }
+    
+    /* Letter section */
+    .letter {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Journey section */
+    .journey-animation {
+        height: 150px;
+    }
+    
+    .milestone-label {
+        font-size: 0.7rem;
+        padding: 3px 5px;
+    }
+    
+    /* Growing heart section */
+    .growing-heart {
+        font-size: 2.5rem;
+    }
+    
+    .heart-message {
+        font-size: 1rem;
+    }
+    
+    /* Final message */
+    .final-message p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    /* Fix for iPhone notch */
+    .section {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    /* Fix for iPhone button touch targets */
+    button, .love-option, .growing-heart {
+        min-height: 44px; /* Apple's recommended minimum touch target size */
+    }
+    
+    /* Fix for iPhone text sizing */
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Photobooth gallery adjustments */
+    .photobooth-frame {
+        width: 100%;
+    }
+    
+    .photobooth-controls {
+        gap: 10px;
+    }
+    
+    .control-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Video player adjustments */
+    .video-container {
+        padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+    }
+}
+
+/* Fix for iPhone X and newer with notches */
+@supports (padding: max(0px)) {
+    .section {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        padding-top: max(15px, env(safe-area-inset-top));
+        padding-bottom: max(15px, env(safe-area-inset-bottom));
+    }
+    
+    .landing-animation {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Fix for iPhone orientation changes */
+@media screen and (orientation: portrait) {
+    .love-options-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .love-option {
+        width: 100%;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) {
+    .love-options-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .content {
+        margin: 20px auto;
+    }
+}
