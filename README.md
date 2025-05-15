@@ -1,65 +1,69 @@
-# Cute Website for Indah
+# For My Dearest Indah
 
-This is a cute, pinkish website created especially for your girlfriend. Here's how to customize it and make it perfect for her.
+![Love Website](assets/images/logo.png)
 
-## How to Customize
+## 💖 Project Overview
 
-### 1. Customize "Things I Love About You"
-- Open `index.html`
-- Find the section with `class="love-grid"`
-- Edit the text inside the `<p>` tags to add your own reasons why you love her
-- You can add more items by duplicating the following structure:
-  ```html
-  <div class="love-item">
-      <div class="love-item-inner">
-          <p>Your custom text here</p>
-      </div>
-  </div>
-  ```
+This is a personal project I created as a special gift for my girlfriend Indah. It's a romantic interactive website featuring animations, personal messages, and our memories together.
 
-### 2. Add Your Photos
-- Gather photos of you and your girlfriend that you want to display
-- Place them in the `assets` folder
-- Open `script.js` and find the function `updateGalleryImages`
-- Call this function at the end of the file with an array of your image paths:
-  ```javascript
-  // Add this line at the end of script.js
-  updateGalleryImages([
-    'assets/photo1.jpg',
-    'assets/photo2.jpg',
-    'assets/photo3.jpg',
-    'assets/photo4.jpg',
-    'assets/photo5.jpg',
-    'assets/photo6.jpg'
-  ]);
-  ```
+## 🌟 Features
 
-### 3. Add Your YouTube Video
-- Find the YouTube video you want to embed
-- Copy the video ID (the part after `v=` in the YouTube URL)
-- Open `script.js` and find the function `updateYouTubeVideoId`
-- Call this function at the end of the file with your video ID:
-  ```javascript
-  // Add this line at the end of script.js
-  updateYouTubeVideoId('YOUR_YOUTUBE_VIDEO_ID');
-  ```
+- **Interactive Love Story**: Animated journey through our relationship
+- **Photobooth Memories**: Gallery showcasing our special moments together
+- **Love Rating System**: Fun interactive element with animations
+- **Personal Letter**: Heartfelt message straight from the heart
+- **Journey Timeline**: Visual representation of our past, present and future
+- **Growing Heart**: Interactive element with a surprise at the end
+- **Background Music**: Romantic soundtrack that sets the mood
 
-### 4. Customize the Text
-- Open `script.js` and find the `textToType` array at the beginning
-- Change these messages to your own personal messages
-- You can also customize other text throughout the HTML file
+## 💻 Technical Details
 
-## How to View the Website
-1. Open the `index.html` file in a web browser
-2. Enjoy the cute website with your girlfriend!
+### Technologies Used
 
-## Features
-- Cute pink theme with animated elements
-- Typing animation for your personal message
-- Display of your handwritten love note
-- Photo gallery of your favorite moments
-- Interactive "Do you love me?" section with cute responses
-- YouTube video embed
-- Final heartfelt message with animations
+- HTML5 for structure
+- CSS3 for styling (with animations and transitions)
+- Vanilla JavaScript for interactivity
+- Font Awesome for icons
+- Google Fonts for typography
 
-Enjoy sharing this special website with your girlfriend! ❤️
+### Responsive Design
+
+The website is fully responsive and works on all devices, with special optimizations for:
+- Desktop browsers
+- Mobile phones (particularly iPhone)
+- Tablets
+
+### Browser Compatibility
+
+Tested and working on:
+- Chrome
+- Firefox
+- Safari
+- Edge
+
+## 📁 Project Structure
+
+```
+├── index.html          # Main HTML file
+├── styles.css         # Main stylesheet
+├── mobile.css         # Mobile-specific styles
+├── script.js          # JavaScript functionality
+├── assets/
+│   ├── audio/         # Background music
+│   ├── images/        # Photos and graphics
+│   └── videos/        # Video memories
+└── README.md          # This documentation
+```
+
+## 🚀 Future Enhancements
+
+I plan to add more features in the future:
+
+- More interactive elements
+- Additional photo memories
+- Anniversary countdown timer
+- More personalized sections
+
+---
+
+Made with ❤️ for Indah
