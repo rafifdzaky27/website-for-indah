@@ -1,6 +1,5 @@
-# For My Dearest Indah
+# For My Dearest Girlfriend
 
-![Love Website](assets/images/logo.png)
 
 ## 💖 Project Overview
 
@@ -30,7 +29,7 @@ This is a personal project I created as a special gift for my girlfriend Indah. 
 
 The website is fully responsive and works on all devices, with special optimizations for:
 - Desktop browsers
-- Mobile phones (particularly iPhone)
+- Mobile (still bugged)
 - Tablets
 
 ### Browser Compatibility
