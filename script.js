@@ -156,32 +156,120 @@ function setupLandingPage() {
     
     enterSiteBtn.addEventListener('click', function() {
         landingAnimation.classList.remove('active');
+        // Transition to the photo gallery after landing fades
         setTimeout(() => {
-            // Show the first section
-            document.getElementById('section1').classList.add('active');
+            initializePhotoGallery();
+        }, 1000); // Corresponds to landing animation fade out time
+    });
+}
+
+// Function to initialize and show the photo gallery
+function initializePhotoGallery() {
+    const photoGallerySection = document.getElementById('photo-gallery-section');
+    const photos = photoGallerySection.querySelectorAll('.gallery-photo');
+    const continueBtnGallery = document.getElementById('continue-to-story-btn');
+
+    // Ensure all photos are loaded before showing them
+    let loadedCount = 0;
+    photos.forEach(photo => {
+        // Force image reload
+        const src = photo.src;
+        photo.src = '';
+        photo.src = src;
+        
+        // Check if image is already loaded
+        if (photo.complete) {
+            loadedCount++;
+            if (loadedCount === photos.length) {
+                showGallery();
+            }
+        } else {
+            // Add load event listener
+            photo.onload = function() {
+                loadedCount++;
+                if (loadedCount === photos.length) {
+                    showGallery();
+                }
+            };
             
-            // Start typing animation
-            const typingText = document.getElementById('typing-text');
-            const nextBtn = document.getElementById('next-btn-1');
+            // Handle error case
+            photo.onerror = function() {
+                console.error('Error loading image:', photo.src);
+                loadedCount++;
+                if (loadedCount === photos.length) {
+                    showGallery();
+                }
+            };
+        }
+    });
+    
+    function showGallery() {
+        // Show gallery section
+        photoGallerySection.classList.add('active');
+        
+        // Animate photos appearing one by one
+        photos.forEach((photo, index) => {
+            setTimeout(() => {
+                // Explicitly set styles to ensure visibility
+                photo.style.opacity = '0';
+                photo.style.transform = 'scale(0.5)';
+                
+                // Force browser to recognize the change before applying the visible class
+                setTimeout(() => {
+                    const initialRotate = getComputedStyle(photo).getPropertyValue('--initial-rotate') || '0deg';
+                    photo.style.setProperty('--final-rotate', initialRotate);
+                    photo.classList.add('visible');
+                }, 50);
+            }, index * 400 + 500);
+        });
+        
+        // The continue button is already visible by default with our new CSS
+        // No need to explicitly show it, but we'll ensure it's not hidden
+        if (continueBtnGallery.classList.contains('hidden')) {
+            const lastPhotoAnimStartDelay = (photos.length - 1) * 400 + 500;
+            const photoTransitionDuration = 1000; // Slightly longer than CSS transition for safety
             
-            // Clear any previous content
-            typingText.innerHTML = '';
-            
-            // Hide the button initially
-            nextBtn.classList.add('hidden');
-            
-            const textToType = [
-                "My dearest Indah,",
-                "I still can't believe I get to call you mine.",
-                "Thank you for being my best friend, my love, my everything.",
-                "I made this for you, as a small piece of how much I love you.",
-            ];
-            
-            // Show button only after typing is complete
-            typeText(typingText, textToType, 0, 0, function() {
-                nextBtn.classList.remove('hidden');
-            });
+            setTimeout(() => {
+                continueBtnGallery.classList.remove('hidden');
+            }, lastPhotoAnimStartDelay + photoTransitionDuration);
+        }
+    }
+
+    // Add event listener to continue button
+    continueBtnGallery.addEventListener('click', function() {
+        photoGallerySection.classList.remove('active');
+        // Wait for gallery fade-out before showing the next section
+        setTimeout(() => {
+            startTypingAnimationForSection1();
         }, 1000);
+    });
+}
+
+// Function to start the typing animation for Section 1
+function startTypingAnimationForSection1() {
+    const section1 = document.getElementById('section1');
+    const typingText = document.getElementById('typing-text');
+    const nextBtn1 = document.getElementById('next-btn-1');
+
+    section1.classList.add('active'); // Show section1
+    
+    typingText.innerHTML = ''; // Clear any previous content
+    
+    // Hide the button initially
+    if (!nextBtn1.classList.contains('hidden')) {
+        nextBtn1.classList.add('hidden');
+    }
+
+    const textToType = [
+        "My dearest Indah,",
+        "I still can't believe I get to call you mine.",
+        "Thank you for being my best friend, my love, my everything.",
+        "I made this for you, as a small piece of how much I love you.",
+    ];
+
+    // Start typing animation, show button on completion
+    typeText(typingText, textToType, 0, 0, function() {
+        nextBtn1.classList.remove('hidden');
     });
 }
 

@@ -50,6 +50,143 @@ body {
     visibility: visible;
 }
 
+/* Dreamy Photo Constellation Gallery */
+.gallery-section {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe6f2 0%, #ffcce0 100%); /* Pink background to match other sections */
+    background-image: radial-gradient(circle, rgba(255, 105, 180, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle, rgba(255, 182, 193, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px, 50px 50px; /* Subtle dot pattern */
+    overflow: hidden;
+    position: fixed; /* Keep it fixed like the landing, but manage visibility with JS */
+    top: 0;
+    left: 0;
+    z-index: 900; /* Below landing (1000), above main content */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.gallery-section.active {
+    display: flex;
+    opacity: 1;
+}
+
+.gallery-container {
+    position: relative;
+    width: 80%;
+    height: 70%;
+    max-width: 1000px;
+    max-height: 600px;
+    margin-bottom: 20px; /* Space for the button */
+}
+
+/* Ensure the gallery section's button is centered */
+#photo-gallery-section .next-btn {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+}
+
+.gallery-photo {
+    position: absolute;
+    border-radius: 15px; /* Soft edges */
+    box-shadow: 0 0 15px 5px rgba(128, 0, 128, 0.7), /* Purple glow */
+                0 0 25px 10px rgba(147, 112, 219, 0.5); /* Lighter purple glow */
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
+    z-index: 5; /* Ensure photos are visible */
+}
+
+.gallery-photo:hover {
+    box-shadow: 0 0 25px 10px rgba(128, 0, 128, 1), /* Brighter Purple glow */
+                0 0 35px 15px rgba(147, 112, 219, 0.7);
+    transform: scale(1.05) rotate(2deg); /* Slight zoom and tilt on hover */
+    z-index: 10; /* Ensure hovered photo is on top */
+}
+
+/* Positions for a more spaced out constellation-like effect */
+.photo-1 { width: 200px; height: 280px; top: 8%; left: 10%; transform: rotate(-5deg) scale(0.5); }
+.photo-2 { width: 220px; height: 180px; top: 55%; left: 8%; transform: rotate(3deg) scale(0.5); }
+.photo-3 { width: 180px; height: 260px; top: 15%; left: 32%; transform: rotate(0deg) scale(0.5); } /* Portrait orientation */
+.photo-4 { width: 180px; height: 260px; top: 50%; left: 30%; transform: rotate(-2deg) scale(0.5); }
+.photo-5 { width: 230px; height: 190px; top: 12%; left: 58%; transform: rotate(5deg) scale(0.5); }
+.photo-6 { width: 210px; height: 170px; top: 60%; left: 55%; transform: rotate(4deg) scale(0.5); }
+.photo-7 { width: 190px; height: 270px; top: 10%; left: 80%; transform: rotate(-3deg) scale(0.5); }
+.photo-8 { width: 220px; height: 190px; top: 55%; left: 78%; transform: rotate(2deg) scale(0.5); }
+
+/* Entrance animation for photos when gallery is active */
+.gallery-section.active .gallery-photo.visible {
+    opacity: 1 !important;
+    transform: scale(1) rotate(var(--final-rotate, 0deg)) !important;
+    display: block !important;
+}
+
+.photo-1 { --initial-rotate: -5deg; }
+.photo-2 { --initial-rotate: 3deg; }
+.photo-3 { --initial-rotate: 0deg; }
+.photo-4 { --initial-rotate: -2deg; }
+.photo-5 { --initial-rotate: 5deg; }
+.photo-6 { --initial-rotate: 4deg; }
+.photo-7 { --initial-rotate: -3deg; }
+.photo-8 { --initial-rotate: 2deg; }
+
+/* Button styles for all continue buttons */
+.next-btn {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    color: white;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 105, 180, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.5s ease-out;
+    opacity: 1; /* Make buttons visible by default */
+    display: block; /* Ensure buttons are displayed */
+    margin: 20px auto; /* Center horizontally with auto margins */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 105, 180, 0.6);
+}
+
+/* For buttons that need to be initially hidden */
+.next-btn.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* For buttons that need to be explicitly shown */
+.next-btn.visible {
+    opacity: 1;
+    display: block;
+}
+
+/* Ensure all section buttons are properly centered */
+.section .next-btn,
+#letter-section .next-btn,
+#our-story .next-btn,
+#journey-section .next-btn,
+#growing-heart-section .next-btn {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+}
+
+
 .dreamy-background {
     position: absolute;
     top: 0;
