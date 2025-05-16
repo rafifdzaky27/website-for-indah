@@ -216,10 +216,9 @@ function setupNavigation() {
         changeSection('letter-section', 'journey-section');
     });
     
-    // Journey to YouTube
+    // Journey directly to Growing Heart (skipping YouTube section)
     document.getElementById('next-btn-journey').addEventListener('click', function() {
-        changeSection('journey-section', 'section5');
-        loadYouTubeVideo();
+        changeSection('journey-section', 'growing-heart-section');
     });
     
     // YouTube to Growing Heart
@@ -291,10 +290,26 @@ function createFloatingHeartsBackground(container, count) {
     }
 }
 
-// Typing animation function
+// Typing animation function - improved for mobile devices
 function typeText(element, textArray, textIndex, charIndex, callback) {
+    // Make sure the element is visible and has content before starting
+    if (textIndex === 0 && charIndex === 0) {
+        // Set initial content and styling to ensure visibility
+        element.style.display = 'block';
+        element.style.visibility = 'visible';
+        element.style.opacity = '1';
+        element.innerHTML = ''; // Clear any previous content
+        
+        // Force element to be visible on iPhone
+        setTimeout(() => {
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+        }, 100);
+    }
+    
     if (textIndex < textArray.length) {
         if (charIndex < textArray[textIndex].length) {
+            // Add character by character
             element.innerHTML += textArray[textIndex].charAt(charIndex);
             charIndex++;
             setTimeout(function() {

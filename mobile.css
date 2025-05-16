@@ -152,6 +152,15 @@ html, body {
     .typing-text {
         font-size: 1.3rem;
         min-height: 180px;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+        overflow: visible;
+        font-family: 'Pacifico', cursive;
     }
     
     /* Love rating section */
@@ -266,17 +275,112 @@ html, body {
     }
 }
 
-/* Fix for iPhone X and newer with notches */
-@supports (padding: max(0px)) {
+/* Fix specifically for iPhone 13 */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
+       only screen and (width: 390px) and (height: 844px) {
     .section {
-        padding-left: max(15px, env(safe-area-inset-left));
-        padding-right: max(15px, env(safe-area-inset-right));
+        padding-top: max(20px, env(safe-area-inset-top));
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        height: 100%;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .content {
+        transform: scale(0.8);
+        width: 100%;
+        max-height: none;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    
+    .typing-text {
+        font-size: 1.4rem;
+        min-height: 200px;
+        line-height: 1.8;
+        padding: 20px;
+        margin: 10px auto;
+        width: 90%;
+    }
+    
+    .next-btn {
+        transform: scale(1.2);
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    
+    #section1 .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Fix for growing heart section */
+    #growing-heart-section .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+    
+    .growing-heart-container {
+        margin: 20px auto;
+    }
+    
+    .growing-heart {
+        font-size: 3rem !important;
+        margin: 20px auto;
+        display: block;
+    }
+    
+    /* Fix for empty white boxes */
+    .section:empty {
+        display: none;
+    }
+    
+    /* Fix for journey section */
+    .journey-animation {
+        height: 180px !important;
+        margin: 15px auto;
+        width: 90%;
+    }
+    
+    /* Fix for our story section */
+    #our-story .content {
+        padding: 15px 10px;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    /* Fix for photobooth section */
+    #section3 .content {
+        padding: 15px 5px;
+    }
+    
+    .photobooth-frame {
+        margin: 10px auto;
+    }
+}
+
+/* Fix for iPhone X, 11, 12, and newer with notch */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3),
+       only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2),
+       only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3),
+       only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3),
+       only screen and (min-device-width: 375px) and (max-device-width: 428px) and (min-device-height: 812px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    .section {
         padding-top: max(15px, env(safe-area-inset-top));
         padding-bottom: max(15px, env(safe-area-inset-bottom));
     }
     
     .landing-animation {
-        padding-left: env(safe-area-inset-left);
+        padding-top: max(15px, env(safe-area-inset-top));
+        padding-bottom: max(15px, env(safe-area-inset-bottom));
         padding-right: env(safe-area-inset-right);
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
